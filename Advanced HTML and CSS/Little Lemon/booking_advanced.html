@@ -1,0 +1,86 @@
+<!-- Practical Learning on advanced form elements -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Little Lemon</title>
+    <meta name="description" content="A brief description">
+    <meta name="author" content="your Site Name">
+
+    <!-- Open Graph Protocol -->
+    <!-- Best to uncomment if content will be shared on social media -->
+
+    <meta property="og:title" content="Our Menu">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="img/logo.png"> 
+    <meta property="og:url" content="https://littlelemon">
+    <meta property="og:description" content="Little Lemon is a family-owned Mediterranean restuarant, focused on traditional recipes served with a modern twist.">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Little Lemon">
+
+    <!-- For icons-->
+    <!-- 
+    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-tough-icon" href="/apple-touch-icon.png"> 
+    -->
+
+    <!-- Include css file as the end of the head tag -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <!-- Add your website name or logo here -->
+        <img src="img/logo.png">
+    </header>
+    <nav>
+        <!-- Add yout website navigation here -->
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="location.html">Location</a></li>
+            <li><a href="blog.html">Blog</a></li>
+        </ul>
+    </nav>
+    <main>
+        <!-- Add your main content here -->
+        <h1>Book a Table</h1>
+        <form method="POST">
+            <!-- The fieldse element defines a group for radio button -->
+            <!-- It is ideal to match the value for the name element with that of the id element to tell the value the fieldset the input belongs to-->
+            <!-- The label tag is used to ease each clicking on mobile devices -->
+            <div>
+                <label for="booking_date">Booking Date</label>
+                <input type="date" id="booking_date" name="booking_date">
+            </div>
+            <div>
+                <!-- Value is set to 4 because 4 is the popular number of people per table-->
+                <label for="booking_people">Number of People</label>
+                <input type="range" id="booking_people" name="booking_people" min="1" max="10" value="4" oninput="this.nextElementSibling.value = this.value"> <!-- The js helps with the calculation displayed by the output tag -->
+                <output>4</output><!-- Helps with the slider. The output element contains the result of a calculation -->
+            </div>
+            <div>
+                <!-- Datalist input type allows to specify various options from a drop down list-->
+                <label for="booking_location">Location</label>
+                <input id="booking_location" name="booking_location" list="locations">
+                <datalist id="locations">
+                    <option value="Downtown"></option>
+                    <option value="Uptown"></option>
+                </datalist>
+            </div>
+            <div>
+                <button type="submit">Book Table</button>
+            </div>
+        </form>
+    </main>
+    <footer>
+        <!-- Add copyright notices and other footer content here -->
+        <p>Copyright Little Lemon</p>
+    </footer>
+
+    <!-- Below the footer element you include the javascript file -->
+    <script src="js/scripts.js"></script>
+</body>
+</html>
