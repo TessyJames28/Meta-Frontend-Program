@@ -1,0 +1,21 @@
+* {
+    font-family: cursive;
+    background-color: #e0e1c2;
+}
+/* the pseudo class follows the LVHA rule meaning link, visited, hover, active */
+a:link {
+    color: blue;
+}
+
+a:visited {
+    color: blueviolet;
+}
+
+a:hover {
+    color: green;
+}
+
+a:active {
+    color: white;
+    background-color: black;
+}
